@@ -1,0 +1,86 @@
+<div class="container text-start">
+    <form #f="ngForm" (ngSubmit)="cadastrarInvencao()" class="border p-3">
+
+        <div class="mb-2">
+            <label for="titulo">Nome:</label>
+            <input [(ngModel)]="novaInvencao.nome" for="text" name="nome" id="nome" class="form-control" placeholder="Nome da Invenção" required minlength="5" 
+            pattern="^[a-zA-ZÀ-ÿ0-9\s]+$"
+            #nome="ngModel">
+            @if (nome.invalid && nome.dirty || nome.touched) {
+                <div class="text-danger">
+                    @if (nome.hasError('required')) {
+                        <div>Campo titulo é obrigatório.</div>
+                    }
+                </div>
+            }
+
+            @if (nome.hasError('minLenght')) {
+                <div>Titulo deve possuir pelo menos 5 caracteres.</div>
+            }
+
+            @if (nome.hasError('pattern')) {
+                <div>Não são permitidos caracteres especiais</div>
+            }
+        </div>
+
+        <!-- <div class="mb-2">
+            <label for="nome">Nome:</label>
+            <input [(ngModel)]="novaInvencao.nome" for="string" name="nome" id="nome" class="form-control" placeholder="Nome da invenção" required>
+        </div> -->
+
+        <div class="mb-2">
+            <label for="titulo">Ano da criação:</label>
+            <input [(ngModel)]="novaInvencao.ano" for="date" name="ano" id="ano" class="form-control" placeholder="Ano da criação da invenção" required>
+        </div>
+        
+        <div class="mb-2">
+            <label for="titulo">Inventor:</label>
+            <input [(ngModel)]="novaInvencao.inventor" for="text" name="inventor" id="inventor" class="form-control" placeholder="Nome do inventor" required>
+        </div>
+
+        <div class="mb-2">
+            <label for="titulo">Descrição:</label>
+            <textarea [(ngModel)]="novaInvencao.descricao" for="text" name="descricao" id="descricao" class="form-control" placeholder="Descrição da invenção" required></textarea>
+        </div>
+
+        <div class="mb-2">
+            <label for="titulo">Local:</label>
+            <input [(ngModel)]="novaInvencao.local" for="text" name="local" id="local" class="form-control" placeholder="Local da invenção" required>
+        </div>
+
+        <div class="mb-2">
+            <label for="titulo">Categoria:</label>
+            <select [(ngModel)]="novaInvencao.categoria" name="categoria" id="categoria" class="form-select" required>
+                <option value="" disabled selected>Selecione uma categoria</option>
+                <option value="Comunicação">Comunicação</option>
+                <option value="Energia">Energia</option>
+                <option value="Transporte">Transporte</option>
+                <option value="Outros">Outros</option>
+            </select>
+        </div>  
+
+
+        <div class="mb-2">
+            <label for="titulo">URL da imagem:</label>
+            <input [(ngModel)]="novaInvencao.imagem" for="text" name="imagem" id="imagem" class="form-control" placeholder="URL da imagem da Invenção">
+        </div>
+
+        <div class="form-check mb-3">
+        <input 
+            class="form-check-input" 
+            type="checkbox" 
+            id="destaque" 
+            name="destaque" 
+            [(ngModel)]="novaInvencao.destaque"
+        >
+        <label class="form-check-label" for="destaque">
+            Marcar como destaque
+        </label>
+        </div>
+
+
+        <button [disabled]="f.invalid" class="btn btn-success mt-2 mb-2">
+            Adicionar Filme
+        </button>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+<div *ngIf="invencao" class="card shadow-lg border-0 mb-4">
+  <div class="row g-0">
+    <div class="col-md-5">
+      <img [src]="invencao.imagem" class="img-fluid rounded-start w-100 h-100 object-fit-cover" alt="{{ invencao.nome }}">
+    </div>
+    <div class="col-md-7 d-flex align-items-center">
+      <div class="card-body">
+        <h2 class="card-title mb-3 text-primary">{{ invencao.nome }}</h2>
+
+        <ul class="list-group list-group-flush mb-3">
+          <li class="list-group-item">
+            <strong>Ano de Criação:</strong> {{ invencao.ano }}
+          </li>
+          <li class="list-group-item">
+            <strong>Inventor:</strong> {{ invencao.inventor}}
+          </li>
+          <li class="list-group-item">
+            <strong>Categoria:</strong> {{ invencao.categoria}}
+          </li>
+            <li class="list-group-item">
+            <strong>Descrição:</strong> {{ invencao.descricao}}
+          </li>
+        </ul>
+
+        <a routerLink="/catalogo" class="btn btn-outline-secondary">← Voltar para a lista</a>
+      </div>
+    </div>
+  </div>
+</div>

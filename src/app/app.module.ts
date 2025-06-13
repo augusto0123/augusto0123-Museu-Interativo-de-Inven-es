@@ -11,6 +11,8 @@ import { ListaInvencoesComponent } from './components/lista-invencoes/lista-inve
 import { CardComponent } from './components/card/card.component';
 import { FormsModule } from '@angular/forms';
 import { CategoriaPipe } from './pipes/categoria.pipe';
+import { CadastroInvencaoComponent } from './components/cadastro-invencao/cadastro-invencao.component';
+import { DetalhesInvencaoComponent } from './pages/detalhes-invencao/detalhes-invencao.component';
 
 
 
@@ -23,7 +25,9 @@ import { CategoriaPipe } from './pipes/categoria.pipe';
     NavbarComponent,
     ListaInvencoesComponent,
     CardComponent,
-    CategoriaPipe
+    CategoriaPipe,
+    CadastroInvencaoComponent,
+    DetalhesInvencaoComponent
   ],
   imports: [
     BrowserModule,
