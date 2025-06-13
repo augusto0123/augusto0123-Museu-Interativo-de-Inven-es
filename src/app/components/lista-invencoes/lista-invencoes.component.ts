@@ -11,13 +11,13 @@ import { Invencao } from '../../models/invencao-model';
 })
 export class ListaInvencoesComponent {
   invencoes: Invencao[];
-  nome = '';
+  categoria = '';
 
   constructor(private invencaoService: InvencaoService) {
     this.invencoes = this.invencaoService.getInvencoes();
   }
 
   get invencoesFiltradas(){
-    return this.invencoes.filter(i => i.nome.toLowerCase().includes(this.nome.toLowerCase()));
+    return this.invencoes.filter(i => i.nome.toLowerCase().includes(this.categoria.toLowerCase()));
   }
 }

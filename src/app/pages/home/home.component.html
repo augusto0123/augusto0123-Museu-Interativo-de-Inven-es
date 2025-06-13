@@ -15,7 +15,7 @@
 
       <div class="col" *ngFor="let invencao of invencoes">
         <div class="card h-100 shadow-sm">
-          <img [src]="'assets/' + invencao.imagem" class="card-img-top" [alt]="invencao.nome">
+          <img [src]="invencao.imagem" [alt]="invencao.nome" class="card-img-top-2">
           <div class="card-body">
             <h5 class="card-title">{{ invencao.nome }}</h5>
             <p class="card-text">{{ invencao.descricao }}</p>
