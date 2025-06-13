@@ -7,6 +7,8 @@ import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ListaInvencoesComponent } from './components/lista-invencoes/lista-invencoes.component';
+import { CardComponent } from './components/card/card.component';
 
 
 
@@ -16,7 +18,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     CatalogoComponent,
     HomeComponent,
     CadastrarComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListaInvencoesComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
