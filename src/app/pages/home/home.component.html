@@ -1,1 +1,33 @@
-<p>home works!</p>
+<div class="container mt-5">
+
+  <section class="text-center mb-5">
+    <h1 class="display-3 fw-bold mb-3">🛠️ Museu Interativo de Invenções</h1>
+    <p class="lead text-secondary mb-4">
+      Descubra as maiores invenções que mudaram a história da humanidade.<br>
+      Explore, aprenda e inspire-se com a criatividade e inovação ao longo do tempo.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="mb-4 text-center fw-semibold">Invenções que marcaram a humanidade</h2>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <div class="col" *ngFor="let invencao of invencoes">
+        <div class="card h-100 shadow-sm">
+          <img [src]="'assets/' + invencao.imagem" class="card-img-top" [alt]="invencao.nome">
+          <div class="card-body">
+            <h5 class="card-title">{{ invencao.nome }}</h5>
+            <p class="card-text">{{ invencao.descricao }}</p>
+            <p class="text-muted small mb-0">
+              Inventor: {{ invencao.inventor }} <br>
+              Ano: {{ invencao.ano }} — Local: {{ invencao.local }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>

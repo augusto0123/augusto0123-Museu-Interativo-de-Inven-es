@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { INVENCOES } from '../../mocks/invencao-mock';
 
 @Component({
   selector: 'app-home',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
+    invencoes = INVENCOES.slice(0, 3); 
 }
