@@ -1,40 +1,23 @@
-<div class="card h-100 shadow-sm"
-    [ngClass]="{ 'border border-4 border-warning': invencao.destaque }">
+<div class="card h-100" [ngClass]="{
+                    'border border-4 border-warning': invencao.destaque
+        }">
+    <!-- Property bind -->
+     <img [src]="invencao.imagem" [alt]="invencao.nome" class="card-img-top-2">
 
-    <!-- Imagem da invenção -->
-    <img [src]="invencao.imagem" [alt]="invencao.nome" class="card-img-top-2"
-        style="height: 200px; object-fit: cover;">
-
-    <div class="card-body">
-
-        <!-- Nome da invenção -->
-        <h2 class="card-title">
+     <div class="card-body">
+        <!-- Interploação + Diretiva ngClass (Atributo) -->
+         
+         <h5 class="card-title">
             {{ invencao.nome | uppercase }}
-        </h2>
+         </h5>
 
-        <!-- Descrição da invenção -->
-        <p class="card-text">
-            {{ invencao.descricao }}
-        </p>
+         <p class="card-text">Ano: {{ invencao.ano }} - {{ invencao.ano}}</p>
+         <p class="card-text">Inventor: {{ invencao.inventor}}</p>
+         <p class="card-text">Descrição: {{ invencao.descricao}}</p>
+         <p class="card-text">Local: {{ invencao.local}}</p>
+         <p class="card-text" [ngClass]="invencao.categoria | categoria">Categoria: {{ invencao.categoria}}</p>
 
-        <!-- Detalhes -->
-        <p class="card-text">
-            <strong>Inventor:</strong> {{ invencao.inventor }}
-        </p>
-        <p class="card-text">
-            <strong>Ano:</strong> {{ invencao.ano }}
-        </p>
-        <p class="card-text">
-            <strong>Local:</strong> {{ invencao.local }}
-        </p>
-        <p class="card-text">
-            <strong>Categoria:</strong> {{ invencao.categoria }}
-        </p>
+        <a [routerLink]="['/invencao',invencao.id]" class="btn btn-success">Detalhes</a>
 
-        <!-- Botão de detalhes (opcional) -->
-        <a [routerLink]="['/invencao', invencao.id]" class="btn btn-success">
-            Detalhes
-        </a>
-
-    </div>
+     </div>
 </div>

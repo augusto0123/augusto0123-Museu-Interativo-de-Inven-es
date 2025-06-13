@@ -9,6 +9,8 @@ import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListaInvencoesComponent } from './components/lista-invencoes/lista-invencoes.component';
 import { CardComponent } from './components/card/card.component';
+import { FormsModule } from '@angular/forms';
+import { CategoriaPipe } from './pipes/categoria.pipe';
 
 
 
@@ -21,10 +23,12 @@ import { CardComponent } from './components/card/card.component';
     NavbarComponent,
     ListaInvencoesComponent,
     CardComponent,
+    CategoriaPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

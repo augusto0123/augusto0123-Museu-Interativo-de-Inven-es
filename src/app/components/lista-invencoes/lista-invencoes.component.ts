@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { INVENCOES } from '../../mocks/invencao-mock';
+import { InvencaoService } from '../../services/invencao-service';
 import { Invencao } from '../../models/invencao-model';
 
 @Component({
@@ -10,4 +11,13 @@ import { Invencao } from '../../models/invencao-model';
 })
 export class ListaInvencoesComponent {
   invencoes: Invencao[];
+  nome = '';
+
+  constructor(private invencaoService: InvencaoService) {
+    this.invencoes = this.invencaoService.getInvencoes();
+  }
+
+  get invencoesFiltradas(){
+    return this.invencoes.filter(i => i.nome.toLowerCase().includes(this.nome.toLowerCase()));
+  }
 }

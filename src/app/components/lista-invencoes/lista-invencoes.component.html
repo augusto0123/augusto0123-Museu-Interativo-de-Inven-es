@@ -1,0 +1,20 @@
+<div class="row text-start">
+    <div class="col-md-4 mb-4">
+        <label for="nome">Buscar por Nome da Invenção:</label>
+        <input [(ngModel)]="nome" type="text" name="nome" class="form-control" placeholder="Buscar por nome"/>
+    </div>
+</div>
+
+<p>{{nome}}</p>
+
+<div *ngIf="invencoes.length > 0; else vazio">
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let invencao of invencoesFiltradas">
+            <app-card [invencao]="invencao"></app-card>
+        </div>
+    </div>
+</div>
+
+<ng-template #vazio>
+    <p class="text-center text-muted mt-5">Nenhum filme encontrado</p>
+</ng-template>
